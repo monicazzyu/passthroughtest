@@ -9,6 +9,7 @@ TagManager:
   - Friction
   - SamplesInfoPanel
   - Circle
+  - CircleSection
   layers:
   - Default
   - TransparentFX
