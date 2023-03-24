@@ -10,6 +10,7 @@ TagManager:
   - SamplesInfoPanel
   - Circle
   - CircleSection
+  - Finger
   layers:
   - Default
   - TransparentFX
