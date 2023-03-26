@@ -14,6 +14,6 @@ public class HandDistance : MonoBehaviour
         handDistance = Vector3.Distance(leftHand.transform.position, rightHand.transform.position);
 
         // Set the size of the quad based on the hand distance
-        quad.transform.localScale = new Vector3(handDistance, handDistance, quad.transform.localScale.z);
+        quad.transform.localScale = new Vector3(handDistance, quad.transform.localScale.y, handDistance);
     }
 }
