@@ -45,7 +45,7 @@ public class Viusal : MonoBehaviour
         GameObject sphere = Instantiate(prefab, Vector3.zero, Quaternion.identity, Center.transform);
         sphere.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         sphere.transform.localPosition = Vector3.zero;
-        sphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        sphere.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
 
         if (prefab == PinkPrefab)
         {
@@ -72,7 +72,7 @@ public class Viusal : MonoBehaviour
             GameObject sphere = Instantiate(prefab, Vector3.zero, Quaternion.identity, Center.transform);
             sphere.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             sphere.transform.localPosition = Vector3.zero;
-            sphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            sphere.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
 
             if (currentSpeed >= 0)
             {
@@ -123,7 +123,7 @@ public class Viusal : MonoBehaviour
                 {
                     pink.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
 
-                    if(pink.transform.localScale.x >= 15.2)
+                    if(pink.transform.localScale.x >= 0.016)
                     {
                         Destroy(pink);
                     }
@@ -135,7 +135,7 @@ public class Viusal : MonoBehaviour
                 if (blue != null)
                 {
                     blue.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
-                    if(blue.transform.localScale.x >= 15.2)
+                    if(blue.transform.localScale.x >= 0.016)
                     {
                         Destroy(blue);
                     }
