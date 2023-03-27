@@ -3,7 +3,27 @@ guid: 8add06720130e244db91ee9b4422a6d5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Notebook_-_BookmarkMat
+    second: {fileID: 2100000, guid: 8a0eed6cb407fee4cb958dbc9c2df4a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Notebook_-_CoverMat
+    second: {fileID: 2100000, guid: 5efdd097fa18ad64ca564f6d85182df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Notebook_-_PagesMat
+    second: {fileID: 2100000, guid: 7b3018c9ba9350742b8571e1c839a437, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Notebook_-_StrapMat
+    second: {fileID: 2100000, guid: 5359aeaef950b014bb6566fd5c85c8da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
