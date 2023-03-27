@@ -23,12 +23,12 @@ public class Pinch : MonoBehaviour
     /// True if an index tip is inside the cube, false otherwise.
     /// First item is left hand, second item is right hand
     /// </summary>
-  
+
 
     void Start()
     {
         handdistance = gameObject.GetComponent<HandDistance>();
-    
+
 
         m_hands = new OVRHand[]
         {
@@ -43,11 +43,15 @@ public class Pinch : MonoBehaviour
 
     void Update()
     {
-        
+
         if (m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index) && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
+        {
             handdistance.enabled = true;
+        }
+
         else if (handdistance.enabled == true)
             handdistance.enabled = false;
+
     }
 
     
