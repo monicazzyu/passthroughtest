@@ -123,7 +123,7 @@ public class Viusal : MonoBehaviour
                 {
                     pink.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
 
-                    if(pink.transform.localScale.x >= 0.016)
+                    if(pink.transform.localScale.x >= 0.005)
                     {
                         Destroy(pink);
                     }
@@ -135,7 +135,7 @@ public class Viusal : MonoBehaviour
                 if (blue != null)
                 {
                     blue.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
-                    if(blue.transform.localScale.x >= 0.016)
+                    if(blue.transform.localScale.x >= 0.005)
                     {
                         Destroy(blue);
                     }
