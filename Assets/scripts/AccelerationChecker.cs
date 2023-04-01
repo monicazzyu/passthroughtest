@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class AccelerationChecker : MonoBehaviour
 {
     public UnityEvent onNegativeAcceleration;
+    public UnityEvent onPositiveAcceleration;
 
     public Rigidbody rb;
     public float currentVelocity;
@@ -36,6 +37,7 @@ public class AccelerationChecker : MonoBehaviour
         else
         { 
             A = 0;
+            onPositiveAcceleration.Invoke();
         }
     }
 }
