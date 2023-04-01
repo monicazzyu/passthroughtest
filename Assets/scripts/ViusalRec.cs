@@ -6,45 +6,53 @@ public class ViusalRec : MonoBehaviour
 {
     public GameObject OrangePrefab;
     public GameObject RedPrefab;
-    public Transform RightHand;
 
     public RectTransform Center;
     public float IncreaseInterval = 1.0f;
     public float ScaleIncreaseAmount = 0.1f;
 
-    public int MoveCount;
-    private int preCount;
+    public Quaternion target;
+
+    public int countNumber;
+
+    private GameObject prefab;
+
+
 
     private float timer = 0.0f;
     private List<GameObject> orangexls = new List<GameObject>();
     private List<GameObject> redxls = new List<GameObject>();
 
-    public float currentSpeed;
-    public float currentDelay;
+    private List<GameObject> orangels = new List<GameObject>();
+    private List<GameObject> redls = new List<GameObject>();
 
-    public float MinDelay = 0.1f;
-    public float MaxDelay = 2f;
-    private float lastSpawnTime = 0f;
-    private Vector3 lastPosition;
+    private List<GameObject> oranges = new List<GameObject>();
+    private List<GameObject> reds = new List<GameObject>();
 
-    public float orangeredDelayScale = 0.2f; // factor to adjust delay based on acceleration
-    public float orangeredScaleDifference = 5f; // difference in scale between orange and red rectangles
 
-    private float orangeSpawnTime = 0f;
-    private float redSpawnTime = 0f;
-    private bool orangeSpawned = false;
-    private bool redSpawned = false;
+
 
 
 
 
     public void TouchRecVisualXL()
     {
-        GameObject prefab = (orangexls.Count > redxls.Count) ? RedPrefab : OrangePrefab;
+        countNumber += 1;
+
+        if (countNumber % 2 == 1)
+        {
+            prefab = OrangePrefab;
+        }
+        else
+        {
+            prefab = RedPrefab;
+        }
+
+        //GameObject prefab = (orangexls.Count > redxls.Count) ? RedPrefab : OrangePrefab;
 
         GameObject rectangle = Instantiate(prefab, Vector3.zero, Quaternion.identity, Center.transform);
-        rectangle.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-        rectangle.transform.localPosition = Vector3.zero;
+        rectangle.transform.rotation = Quaternion.Euler(90f, 0f, 15f);
+        rectangle.transform.localPosition = new Vector3(-0.422f, -0.07530004f, 0f);
         rectangle.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
 
         if (prefab == OrangePrefab)
@@ -58,34 +66,146 @@ public class ViusalRec : MonoBehaviour
     }
 
 
+    public void TouchRecVisualL()
+    {
+        countNumber += 1;
+
+        if (countNumber % 2 == 1)
+        {
+            prefab = OrangePrefab;
+        }
+        else
+        {
+            prefab = RedPrefab;
+        }
+
+        //GameObject prefab = (orangexls.Count > redxls.Count) ? RedPrefab : OrangePrefab;
+
+        GameObject rectangle2 = Instantiate(prefab, Vector3.zero, Quaternion.identity, Center.transform);
+        rectangle2.transform.rotation = Quaternion.Euler(90f, 0f, 30f);
+        rectangle2.transform.localPosition = new Vector3(-0.327f, 0.1867f, 0f);
+        rectangle2.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+
+        if (prefab == OrangePrefab)
+        {
+            orangels.Add(rectangle2);
+        }
+        else
+        {
+            redls.Add(rectangle2);
+        }
+    }
+
+
+    public void TouchRecVisual()
+    {
+        countNumber += 1;
+
+        if (countNumber % 2 == 1)
+        {
+            prefab = OrangePrefab;
+        }
+        else
+        {
+            prefab = RedPrefab;
+        }
+
+        //GameObject prefab = (orangexls.Count > redxls.Count) ? RedPrefab : OrangePrefab;
+
+        GameObject rectangle3 = Instantiate(prefab, Vector3.zero, Quaternion.identity, Center.transform);
+        rectangle3.transform.rotation = Quaternion.Euler(90f, 0f, 20f);
+        rectangle3.transform.localPosition = new Vector3(-0.426f, 0.2607f, 0f);
+        rectangle3.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+
+        if (prefab == OrangePrefab)
+        {
+            orangels.Add(rectangle3);
+        }
+        else
+        {
+            redls.Add(rectangle3);
+        }
+    }
+
+
 
 
 
 
     private void Update()
     {
-
-
-
-
-
-
-        // patonly
         timer += Time.deltaTime;
 
         if (timer >= IncreaseInterval)
         {
             timer -= IncreaseInterval;
 
+
+            // xl
             foreach (var orangexl in orangexls)
             {
                 if (orangexl != null)
                 {
                     orangexl.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
-
-                    if(orangexl.transform.localScale.x >= 0.004)
+                   
+                    if (orangexl.transform.localScale.x >= 0.006)
                     {
                         Destroy(orangexl);
+                    }
+                }
+            }
+
+            foreach (var redxl in redxls)
+            {
+                if (redxl != null)
+                {
+                    redxl.transform.localScale += Vector3.one * ScaleIncreaseAmount;
+              
+                    if (redxl.transform.localScale.x >= 0.006)
+                    {
+                        Destroy(redxl);
+                    }
+                }
+            }
+
+            // l
+            foreach (var orangel in orangels)
+            {
+                if (orangel != null)
+                {
+                    orangel.transform.localScale += Vector3.one * ScaleIncreaseAmount;
+
+                    if (orangel.transform.localScale.x >= 0.004)
+                    {
+                        Destroy(orangel);
+                    }
+                }
+            }
+
+            foreach (var redl in redls)
+            {
+                if (redl != null)
+                {
+                    redl.transform.localScale += Vector3.one * ScaleIncreaseAmount;
+
+                    if (redl.transform.localScale.x >= 0.004)
+                    {
+                        Destroy(redl);
+                    }
+                }
+            }
+
+
+            // m
+            foreach (var orange in oranges)
+            {
+                if (orange != null)
+                {
+                    orange.transform.localScale += Vector3.one * ScaleIncreaseAmount;
+
+                    if (orange.transform.localScale.x >= 0.0016)
+                    {
+                        Destroy(orange);
                     }
                 }
             }
@@ -94,16 +214,24 @@ public class ViusalRec : MonoBehaviour
             {
                 if (red != null)
                 {
-                    red.transform.localScale += Vector3.one * ScaleIncreaseAmount ;
-                    if(red.transform.localScale.x >= 0.005)
+                    red.transform.localScale += Vector3.one * ScaleIncreaseAmount;
+
+                    if (red.transform.localScale.x >= 0.0016)
                     {
                         Destroy(red);
                     }
                 }
             }
+
         }
+
+        orangexls.RemoveAll(item => item == null);
+        redxls.RemoveAll(item => item == null);
 
         oranges.RemoveAll(item => item == null);
         reds.RemoveAll(item => item == null);
+
+        orangels.RemoveAll(item => item == null);
+        redls.RemoveAll(item => item == null);
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6008751443227385879}
   - component: {fileID: 6008751443227385877}
   - component: {fileID: 6008751443227385876}
+  - component: {fileID: 6640459910196154019}
   m_Layer: 5
   m_Name: RedVisual
   m_TagString: Untagged
@@ -76,3 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &6640459910196154019
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008751443227385878}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0ee7d2f23fb34b1488f9a9c26f7a908d, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
